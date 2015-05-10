@@ -2,7 +2,7 @@ require 'wiringpi'
 
 module Car
   class Wheel
-    def initialize(pin1, pin2)
+    def initialize(pin1, pin2, pwm1, pwm2)
       @pin1 = pin1
       @pin2 = pin2
 
