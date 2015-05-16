@@ -1,8 +1,8 @@
 Dir[File.dirname(__FILE__) + '/car/*.rb'].each { |file| require file }
 
 class SmartCar
-  def initialize(pins)
-    @chassis = Car::Chassis.new(*(0..3).map { |i| Car::Wheel.new(*pins.slice(i * 4, 4)) })
+  def initialize(pins, frequency)
+    @chassis = Car::Chassis.new(*pins.map { |wheel_pins| Car::Wheel.new(*wheel_pins, frequency) })
   end
 
   def stop
