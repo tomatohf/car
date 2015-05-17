@@ -11,6 +11,10 @@ module Car
       wheels.each { |wheel| wheel.stop }
     end
 
+    def drive(speed)
+      wheels.each { |wheel| wheel.speed = speed }
+    end
+
     def left_wheels
       [@wheel_left_front, @wheel_left_rear]
     end
