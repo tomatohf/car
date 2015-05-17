@@ -22,7 +22,7 @@ module Car
       if (value == 0)
         stop
       else
-        @gpio.soft_pwm_write(@pwm, [value.abs, 1].min * @range)
+        @gpio.soft_pwm_write(@pwm, ([value.abs, 1].min * @range).round)
 
         pin_high, pin_low = (value > 0) ? pins : pins.reverse
         @gpio.digital_write(pin_high, WiringPi::HIGH)
